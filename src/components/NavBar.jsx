@@ -1,10 +1,19 @@
-import logo from "../assets/logo.png";
+import logo from "../assets/Seasonal.png";
 
 const Navbar = () => {
   return (
-    <nav className="w-full flex py-0 justify-between items-center navbar">
-      <img src={logo} alt="logo" className="w-[350px]" />
-    </nav>
+    <div className="w-full h-24 flex fixed ">
+      <img
+        src={logo}
+        alt="logo"
+        style={{
+          height: "40px",
+          marginLeft: "10px",
+          marginTop: "10px",
+          paddingBottom: "10px",
+        }}
+      />
+    </div>
   );
 };
 
