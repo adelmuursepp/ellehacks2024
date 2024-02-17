@@ -1,0 +1,104 @@
+db.Seasonal.insertMany([{
+  FruitName: "Apples",
+  InSeason: [
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "September",
+    "October",
+    "November",
+    "December",
+    "January",
+    "February"
+    
+  ]
+},
+{
+  FruitName: "Apricots",
+  InSeason: [
+    "July",
+    "August"
+  ]
+},
+{
+  "Fruit Name": "Blueberries",
+  "In Season": [
+    "June",
+    "July",
+    "August",
+    "September"
+  ]
+},
+{
+  "Fruit Name": "Cherries(Sour)",
+  "In Season": [
+    "July",
+    "August",
+ 
+  ]
+},
+{
+  "Fruit Name": "Cherries(Sweet)",
+  "In Season": [
+    "July",
+    "August",
+    "June",
+ 
+},
+{
+  "Fruit Name": "Cranberries",
+  "In Season": [
+    "September",
+    "October",
+    "November",
+    "December",
+    "January",
+  ]
+},
+{
+  "Fruit Name": "Grapes",
+  "In Season": [
+    "August",
+    "September",
+    "October",
+  
+    
+  ]
+},
+{
+  "Fruit Name": "Haskaps",
+  "In Season": [
+    "April",
+    "May",
+    "June",
+    "July"
+  ]
+},
+{
+  "Fruit Name": "Nectarines",
+  "In Season": [
+    "September",
+    "October",
+  ]
+},
+{
+  "Fruit Name": "Peaches",
+  "In Season": [
+    "July",
+    "August",
+    "September",
+  ]
+},
+{
+  "Fruit Name": "Strawberries",
+  "In Season": [
+    "May",
+    "June",
+    "July",
+     "August",
+    "September",
+    "October",
+   
+}]);
