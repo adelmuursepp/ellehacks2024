@@ -6,6 +6,7 @@ import SearchIcon from "@mui/icons-material/Search";
 import PhotoCameraIcon from "@mui/icons-material/PhotoCamera";
 import MenuBookIcon from "@mui/icons-material/MenuBook";
 import PersonIcon from "@mui/icons-material/Person";
+import { Outlet, Link } from "react-router-dom";
 
 export default function BottomNav() {
   const [value, setValue] = React.useState("home");
@@ -16,15 +17,33 @@ export default function BottomNav() {
 
   return (
     <BottomNavigation
-      sx={{ width: "full" }}
       value={value}
-      onChange={handleChange}
+      onChange={(event, newValue) => {
+        setValue(newValue);
+      }}
+      sx={{
+        width: "100%",
+        "& .Mui-selected, .Mui-selected > svg": {
+          color: "#2E221F",
+        },
+      }}
     >
-      <BottomNavigationAction value="home" icon={<HomeIcon />} />
-      <BottomNavigationAction value="search" icon={<SearchIcon />} />
-      <BottomNavigationAction value="scan" icon={<PhotoCameraIcon />} />
-      <BottomNavigationAction value="recipes" icon={<MenuBookIcon />} />
-      <BottomNavigationAction value="profile" icon={<PersonIcon />} />
+      <Link to="/">
+        <BottomNavigationAction value="home" icon={<HomeIcon />} />
+      </Link>
+      <Link to="/search">
+        <BottomNavigationAction value="search" icon={<SearchIcon />} />
+      </Link>
+      <Link to="/scan">
+        <BottomNavigationAction value="scan" icon={<PhotoCameraIcon />} />
+      </Link>
+      <Link to="/recipes">
+        <BottomNavigationAction value="recipes" icon={<MenuBookIcon />} />
+      </Link>
+      <Link to="/profile">
+        <BottomNavigationAction value="profile" icon={<PersonIcon />} />
+      </Link>
+      <Outlet />
     </BottomNavigation>
   );
 }
