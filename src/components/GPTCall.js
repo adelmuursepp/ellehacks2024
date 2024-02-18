@@ -6,8 +6,8 @@ const GPTCall = () => {
     const [response, setResponse] = useState('');
 
     const callGPT = async (prompt) => {
-        const API_URL = 'https://api.openai.com/v1/engines/davinci/completions';
-        const API_KEY = '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';
+        const API_URL = 'https://api.openai.com/v1/completions';
+        const API_KEY = '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';
         try {
             const response = await fetch(API_URL, {
                 method: 'POST',
