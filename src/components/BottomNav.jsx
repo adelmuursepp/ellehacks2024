@@ -22,9 +22,8 @@ export default function BottomNav() {
         setValue(newValue);
       }}
       sx={{
-        width: "100%",
         "& .Mui-selected, .Mui-selected > svg": {
-          color: "#2E221F",
+          color: "#007A78",
         },
       }}
     >
