@@ -1,0 +1,15 @@
+.recipe-box {
+  background-color: #fff8f0; /* Soft peach background for contrast and warmth */
+  color: #333; /* Dark grey for text for readability */
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; /* A clean, readable font */
+  padding: 20px; /* Add some padding around the text */
+  border-radius: 8px; /* Rounded corners for a softer look */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  margin: 20px auto; /* Center the box with some margin */
+  max-width: 800px; /* Max width for optimal reading line length */
+  line-height: 1.6; /* Improve line spacing for readability */
+}
+
+.recipe-box p {
+  margin-bottom: 10px; /* Space between paragraphs */
+}

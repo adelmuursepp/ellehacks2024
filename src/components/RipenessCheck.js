@@ -2,6 +2,7 @@ import React, { useRef, useEffect, useState } from 'react';
 import * as tf from '@tensorflow/tfjs';
 import Webcam from "react-webcam";
 import './RipenessCheck.css';
+import ShowRecipe from './ShowRecipe';
 
 const FruitRipenessChecker = () => {
     const webcamRef = useRef(null);
@@ -195,7 +196,7 @@ const FruitRipenessChecker = () => {
             /> */}
             <div className="dashboard">
                 <div className="flex-between margin-bottom">
-                    <h2>Fruit Predictions</h2>
+                    <h2>Fruit Ripeness Predictions</h2>
                 </div>
                 <div className="margin-bottom">
                     <p className="flex-between text-gray-800">
@@ -220,6 +221,7 @@ const FruitRipenessChecker = () => {
                     </div>
                 </div>
             </div>
+            <ShowRecipe product={top1Fruit} />
         </div>
     );
 };
