@@ -29,7 +29,11 @@ const ShowRecipe = (props) => {
     const response_str = await response.json();
     // const response_str = JSON.stringify(response_new);
     console.log(response_str);
-    if (response_str && response_str.choices.length > 0) {
+    if (
+      response_str &&
+      response_str.choices &&
+      response_str.choices.length > 0
+    ) {
       const recipe = response_str.choices[0].message.content;
       setResponse(recipe);
     }
@@ -57,7 +61,7 @@ const ShowRecipe = (props) => {
         }}
       >
         <button style={buttonStyle} onClick={processMessageToChatGPT}>
-          Generate a recipe
+          Generate a Recipe
         </button>
       </div>
       <p className="recipe-box">{response}</p>
