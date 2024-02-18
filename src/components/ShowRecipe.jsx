@@ -1,10 +1,7 @@
 import React, { useState } from "react";
-import "path-browserify"; // Import the polyfill first
-import path from "path"; // Then import the 'path' module
 import "./ShowRecipe.css";
-require("dotenv").config();
 
-const API_KEY = process.env.REACT_APP_OPENAI_API_KEY;
+const API_KEY = "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";
 
 const ShowRecipe = (props) => {
   const [text, setText] = useState("");
