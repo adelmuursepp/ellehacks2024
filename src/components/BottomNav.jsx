@@ -38,7 +38,7 @@ export default function BottomNav() {
         <Link to="/scan">
           <BottomNavigationAction value="scan" icon={<PhotoCameraIcon />} />
         </Link>
-        <Link to="/recipes">
+        <Link to="/in-season">
           <BottomNavigationAction value="recipes" icon={<MenuBookIcon />} />
         </Link>
         <Link to="/profile">

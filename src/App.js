@@ -20,7 +20,7 @@ function App() {
         <Route exact path="/" element={<Home />} />
         <Route path="/search" element={<Search />} />
         <Route path="/scan" element={<Scan />} />
-        <Route path="/recipes" element={<Recipes />} />
+        <Route path="/in-season" element={<Recipes />} />
         <Route path="/profile" element={<Profile />} />
       </Routes>
       <BottomNav />

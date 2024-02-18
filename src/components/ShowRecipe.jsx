@@ -1,13 +1,15 @@
 import React, { useState } from "react";
 import "./ShowRecipe.css";
 
-const API_KEY = "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";
+const API_KEY = process.env.REACT_APP_OPENAI_API_KEY;
 
 const ShowRecipe = (props) => {
   const [text, setText] = useState("");
   const [response, setResponse] = useState("");
 
   const processMessageToChatGPT = async () => {
+    console.log(props.product);
+
     const message_content =
       "I am asking you for a recipe with this ingredient " + props.product;
     const apiRequestBody = {
