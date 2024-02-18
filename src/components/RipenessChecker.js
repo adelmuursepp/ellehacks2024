@@ -91,6 +91,8 @@ const FruitRipenessChecker = () => {
                 // // Update state to change AR text
                 // setFruitInfo(fruitInfo);
 
+                console.log(predictions);
+
                 const topK = 3; // for example, to get top 3 predictions
                 const { values, indices } = tf.topk(predictions, topK);
                 const classesIndices = Array.from(indices.dataSync());
@@ -104,6 +106,29 @@ const FruitRipenessChecker = () => {
                 }));
 
                 console.log(classProbabilities);
+
+                const numDetections = predictions.shape[1]; // Assuming the number of detections is at index 1
+                const predictionArray = await predictions.array(); // Convert the tensor to a JavaScript array
+
+                console.log(predictionArray);
+                // Process the array to extract bounding boxes
+                const boxes = [];
+                for (let i = 0; i < numDetections; i++) {
+                    const [y_min, x_min, y_max, x_max, score, classId] = predictionArray[i];
+                    console.log(predictionArray[i]);
+                    if (score > 0.00000001) { // Define a threshold for detection confidence
+                        const bbox = {
+                            yMin: y_min,
+                            xMin: x_min,
+                            yMax: y_max,
+                            xMax: x_max
+                        };
+                        const className = metadata.labels[classId]; // Map class ID to label
+                        boxes.push({ bbox, className, score });
+                    }
+                }
+
+                console.log(boxes);
 
                 // Cleanup tensors
                 tfVideo.dispose();
