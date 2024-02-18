@@ -8,7 +8,7 @@ const FruitRipenessChecker = () => {
     const [model, setModel] = useState(null);
     const [metadata, setMetadata] = useState(null);
     const [modelLoaded, setModelLoaded] = useState(false);
-    const [fruitInfo, setFruitInfo] = useState("Fruit Information Here");
+    const [fruitInfo, setFruitInfo] = useState([{ className: 'Ripe Banana', probability: 0.6334966421127319 }]);
 
     useEffect(() => {
         const loadModel = async () => {
@@ -89,7 +89,6 @@ const FruitRipenessChecker = () => {
                 // console.log(fruitInfo); // Log the class name
 
                 // // Update state to change AR text
-                setFruitInfo(predictions);
 
                 // console.log(predictions);
 
@@ -106,6 +105,11 @@ const FruitRipenessChecker = () => {
                 }));
 
                 console.log(classProbabilities);
+
+                if (classProbabilities != null && classProbabilities.length > 0) {
+                    console.log("set new fruits");
+                    setFruitInfo(classProbabilities);
+                }
 
                 const numDetections = predictions.shape[1]; // Assuming the number of detections is at index 1
                 const predictionArray = await predictions.array(); // Convert the tensor to a JavaScript array
@@ -174,7 +178,7 @@ const FruitRipenessChecker = () => {
                     height: 480,
                 }}
             />
-            <p>{fruitInfo}</p>
+            <p>{fruitInfo[0].className}</p>
         </div>
     );
 };
