@@ -1,6 +1,7 @@
 import React, { useRef, useEffect, useState } from 'react';
 import * as tf from '@tensorflow/tfjs';
 import Webcam from "react-webcam";
+import './RipenessCheck.css';
 
 const FruitRipenessChecker = () => {
     const webcamRef = useRef(null);
@@ -168,7 +169,7 @@ const FruitRipenessChecker = () => {
                     right: 0,
                     textAlign: "center",
                     zindex: 9,
-                    width: 640,
+                    width: '100%',
                     height: 380,
                 }}
             />
@@ -187,9 +188,32 @@ const FruitRipenessChecker = () => {
                     height: 480,
                 }}
             /> */}
-            <div className="font-signature text-l p-4">
-                <p className="font-signature text-l p-4">{top1Fruit}: {(Math.round(top1FruitProbability * 10000) / 100).toFixed(2)} %</p>
-                <p>{top2Fruit}: {(Math.round(top2FruitProbability * 10000) / 100).toFixed(2)} %</p>
+            <div className="dashboard">
+                <div className="flex-between margin-bottom">
+                    <h2>Fruit Predictions</h2>
+                </div>
+                <div className="margin-bottom">
+                    <p className="flex-between text-gray-800">
+                        <span className="flex-item">
+                            <span className="margin-left">{top1Fruit}</span>
+                        </span>
+                        <span className="font-bold">{(Math.round(top1FruitProbability * 10000) / 100).toFixed(2)}%</span>
+                    </p>
+                    <div className="progress-bar-container">
+                        <div className="progress-bar" style={{ width: `${(Math.round(top1FruitProbability * 100))}%` }}></div>
+                    </div>
+                </div>
+                <div className="margin-bottom">
+                    <p className="flex-between text-gray-800">
+                        <span className="flex-item">
+                            <span className="margin-left">{top2Fruit}</span>
+                        </span>
+                        <span className="font-bold">{(Math.round(top2FruitProbability * 10000) / 100).toFixed(2)}%</span>
+                    </p>
+                    <div className="progress-bar-container">
+                        <div className="progress-bar" style={{ width: `${(Math.round(top2FruitProbability * 100))}%` }}></div>
+                    </div>
+                </div>
             </div>
         </div>
     );
