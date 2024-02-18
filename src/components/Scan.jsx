@@ -6,10 +6,10 @@ const Scan = () => {
   return (
     <div>
       <div>
-        <h2>scan camera</h2>
+        {/* <h2>scan camera</h2> */}
         <FruitRipenessChecker />
 
-        <h3>name of fruit</h3>
+        {/* <h3>name of fruit</h3> */}
       </div>
     </div>
   );

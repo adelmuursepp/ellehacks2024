@@ -79,8 +79,8 @@ const FruitRipenessChecker = () => {
                 webcamRef.current.video.width = videoWidth;
                 webcamRef.current.video.height = videoHeight;
                 // Set canvas height and width
-                canvasRef.current.width = videoWidth;
-                canvasRef.current.height = videoHeight;
+                // canvasRef.current.width = videoWidth;
+                // canvasRef.current.height = videoHeight;
 
                 const tfVideo = tf.browser.fromPixels(video);
                 const resized = tf.image.resizeBilinear(tfVideo, [224, 224]);
@@ -161,22 +161,22 @@ const FruitRipenessChecker = () => {
                 ref={webcamRef}
                 muted={true}
                 style={{
-                    position: "absolute",
-                    marginLeft: "auto",
-                    marginRight: "auto",
+                    position: "flex",
+                    // marginLeft: "auto",
+                    // marginRight: "auto",
                     left: 0,
                     right: 0,
                     textAlign: "center",
                     zindex: 9,
                     width: 640,
-                    height: 480,
+                    height: 380,
                 }}
             />
 
-            <canvas
+            {/* <canvas
                 ref={canvasRef}
                 style={{
-                    position: "absolute",
+                    position: "flex",
                     marginLeft: "auto",
                     marginRight: "auto",
                     left: 0,
@@ -186,12 +186,9 @@ const FruitRipenessChecker = () => {
                     width: 640,
                     height: 480,
                 }}
-            />
-            <p>{fruitInfo[0].className}</p>
-            <p>{top1Fruit}</p>
-            <p>{top2Fruit}</p>
-            <p>{top1FruitProbability * 100}</p>
-            <p>{top2FruitProbability * 100}</p>
+            /> */}
+            <p className='font-l'>{top1Fruit}: {(Math.round(top1FruitProbability * 10000) / 100).toFixed(2)} %</p>
+            <p>{top2Fruit}: {(Math.round(top2FruitProbability * 10000) / 100).toFixed(2)} %</p>
         </div>
     );
 };
