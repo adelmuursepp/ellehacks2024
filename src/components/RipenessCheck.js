@@ -187,8 +187,10 @@ const FruitRipenessChecker = () => {
                     height: 480,
                 }}
             /> */}
-            <p className='font-l'>{top1Fruit}: {(Math.round(top1FruitProbability * 10000) / 100).toFixed(2)} %</p>
-            <p>{top2Fruit}: {(Math.round(top2FruitProbability * 10000) / 100).toFixed(2)} %</p>
+            <div className="font-signature text-l p-4">
+                <p className="font-signature text-l p-4">{top1Fruit}: {(Math.round(top1FruitProbability * 10000) / 100).toFixed(2)} %</p>
+                <p>{top2Fruit}: {(Math.round(top2FruitProbability * 10000) / 100).toFixed(2)} %</p>
+            </div>
         </div>
     );
 };

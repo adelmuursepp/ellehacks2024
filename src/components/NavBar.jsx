@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const Navbar = () => {
   return (
-    <div className="w-full h-32 flex fixed ">
+    <div className="w-full h-42 flex fixed ">
       <Link to="/">
         <img
           src={logo}
