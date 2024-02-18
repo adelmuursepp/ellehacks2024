@@ -9,6 +9,10 @@ const FruitRipenessChecker = () => {
     const [metadata, setMetadata] = useState(null);
     const [modelLoaded, setModelLoaded] = useState(false);
     const [fruitInfo, setFruitInfo] = useState([{ className: 'Ripe Banana', probability: 0.6334966421127319 }]);
+    const [top1Fruit, setTop1Fruit] = useState('');
+    const [top2Fruit, setTop2Fruit] = useState('');
+    const [top1FruitProbability, setTop1FruitProbabilty] = useState(0);
+    const [top2FruitProbability, setTop2FruitProbabilty] = useState(0);
 
     useEffect(() => {
         const loadModel = async () => {
@@ -108,6 +112,11 @@ const FruitRipenessChecker = () => {
 
                 if (classProbabilities != null && classProbabilities.length > 0) {
                     console.log("set new fruits");
+                    setTop1Fruit(classProbabilities[0].className);
+                    setTop2Fruit(classProbabilities[1].className);
+                    setTop1FruitProbabilty(classProbabilities[0].probability);
+                    setTop2FruitProbabilty(classProbabilities[1].probability);
+
                     setFruitInfo(classProbabilities);
                 }
 
@@ -179,6 +188,10 @@ const FruitRipenessChecker = () => {
                 }}
             />
             <p>{fruitInfo[0].className}</p>
+            <p>{top1Fruit}</p>
+            <p>{top2Fruit}</p>
+            <p>{top1FruitProbability * 100}</p>
+            <p>{top2FruitProbability * 100}</p>
         </div>
     );
 };
