@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import "path-browserify"; // Import the polyfill first
+import path from "path"; // Then import the 'path' module
 import "./ShowRecipe.css";
 require("dotenv").config();
 
