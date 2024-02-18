@@ -156,6 +156,10 @@ const FruitRipenessChecker = () => {
             }
     }
 
+    const videoConstraints = {
+        facingMode: 'environment', // This requests the back camera
+    };
+
     return (
         <div>
             <Webcam
@@ -172,6 +176,7 @@ const FruitRipenessChecker = () => {
                     width: '100%',
                     height: 380,
                 }}
+                videoConstraints={videoConstraints}
             />
 
             {/* <canvas
