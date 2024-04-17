@@ -12,7 +12,7 @@ The app was designed on Figma as a prototype and then developed and implemented 
 <img width="824" alt="Screenshot 2024-02-18 at 4 14 36 PM" src="https://github.com/billie-zhang/Seasonal/assets/82481786/13cf8b68-fddd-4d54-97c8-425a8293b123">
 
 ## 🍉 Inspiration
-I am an avid fruit lover, but buying fruits, especially berries and melons can be a little bit of a struggle, so I came up with the idea to create an app that helps identify the perfect stage of the fruit, so everyone can get the 
+I am an avid fruit lover, but buying fruits, especially berries and melons can be a little bit of a struggle, so I came up with the idea to create an app that helps identify the perfect stage of the fruit
 
 ## 🥦 Future Enhancements
 - Further refine the Seasonal ripeness detection system by training the machine learning algorithm and image recognition technology with more images and data.
